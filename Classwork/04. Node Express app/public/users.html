@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function getUsers() {
+            var xhr = new XMLHttpRequest();
+            var url = '/users';
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    var usersArr = JSON.parse(xhr.responseText);
+                    var usersUlElem = document.getElementById('users-list');
+                    var ulContent = '';
+                    usersArr.forEach(function (elem) {
+                        ulContent += '<li>' + elem.firstname + ' ' +
+                            elem.secondname + '</li>';
+                    });
+                    usersUlElem.innerHTML = ulContent;
+                }
+            };
+            xhr.open("GET", url);
+            xhr.send();
+        }
+    </script>
+</head>
+<body onload="getUsers()">
+
+<ul id="users-list"></ul>
+
+<form method="post" action="/users">
+    <label for="firstname">Имя:</label>
+    <input id="firstname" type="text" name="firstname">
+    <label for="secondname">Фамилия:</label>
+    <input id="secondname" name="secondname" type="text">
+    <input type="submit">
+</form>
+
+</body>
+</html>

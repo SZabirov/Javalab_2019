@@ -28,3 +28,5 @@ effective-settings.xml
 *.lck
 *.jar
 */dependency-reduced-pom.xml
+node_modules/
+package-lock.json
