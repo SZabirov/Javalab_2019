@@ -14,3 +14,8 @@
 https://maven.apache.org/guides/introduction/introduction-to-the-pom.html
 https://maven.apache.org/shared/maven-archiver/examples/classpath.html
 https://stackoverflow.com/questions/574594/how-can-i-create-an-executable-jar-with-dependencies-using-maven
+
+## 08. Servlets
+
+Страница, которая принимает url'ы до файлов (через форму). Отправляем url'ы -> скачиваются файлы (на сервер). Скачивание выполняется с использванием библиотеки, которую реализовали ранее.
+Фильтр, который логирует запросы: время, метод, адрес. (ip - опционально)
