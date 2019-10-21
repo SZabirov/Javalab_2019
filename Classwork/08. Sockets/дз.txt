@@ -1,0 +1,17 @@
+java -jar chat-server.jar --port=6000
+--db-properties-path=C:/myJava/db.properties
+
+java -jar chat-client.jar --server-ip=127.0.0.1
+--server-port=6000
+
+Имя файла: db.properties
+Содержимое файла:
+user: postgres
+password: postgres
+port: 5432
+url: jdbc://
+
+В бд есть таблица, в которую записываются
+1) Логин пользователя и пароль
+2) В отдельную таблицу записываем id того, кто
+прислал сообщение, дата+время, текст сообщения
